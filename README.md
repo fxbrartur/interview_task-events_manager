@@ -25,9 +25,10 @@ Este projeto é um sistema de gerenciamento de eventos desenvolvido com Django R
 ### Passo 1: Clonar o Repositório
 
 ```bash
-git clone https://github.com/seu-usuario/events_manager.git
-cd events_manager
+git clone https://github.com/fxbrartur/freelaw_events_manager.git
+cd freelaw_events_manager
 ```
+
 ### Passo 2: Criar e Ativar o Ambiente Virtual
 
 ```bash
