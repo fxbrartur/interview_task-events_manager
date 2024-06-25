@@ -255,7 +255,7 @@ Expected output example:
 </details>
 
 <details>
-  <summary>>DELETE /api/events/{id}/ - Delete a specific event</summary>
+  <summary>DELETE /api/events/{id}/ - Delete a specific event</summary>
 
 Example request:
 ```bash
