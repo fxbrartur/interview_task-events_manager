@@ -1,16 +1,16 @@
-# Sistema de Gerenciamento de Eventos
+# Event Management System
 
-Este projeto é um sistema de gerenciamento de eventos desenvolvido com Django Rest Framework (DRF). Ele permite a criação, atualização, exclusão e listagem de informações dos eventos, bem como a criação, atualização e remoção de usuários para registro como participantes de eventos e notificações sobre atualizações dos mesmos eventos.
+This project is an event management system developed with Django Rest Framework (DRF). It allows the creation, update, deletion, and listing of event information, as well as the creation, update, and removal of users for event participation and notifications about event updates.
 
-## Funcionalidades
+## Features
 
-1. CRUD de Usuários
-2. CRUD de Eventos
-3. Inscrição de Participantes
-4. Notificações para Participantes
-5. Relatórios
+1. User CRUD
+2. Event CRUD
+3. Participant Registration
+4. Notifications for Participants
+5. Reports
 
-## Requisitos
+## Requirements
 
 - Python 3.12
 - Django 5.0.6
@@ -20,32 +20,32 @@ Este projeto é um sistema de gerenciamento de eventos desenvolvido com Django R
 - Redis 5.0.6
 - Pillow 10.3.0
 
-## Configuração do Ambiente
+## Environment Setup
 
-### Passo 1: Clonar o Repositório
+### Step 1: Clone the Repository
 
 ```bash
 git clone https://github.com/fxbrartur/freelaw_events_manager.git
 cd freelaw_events_manager
 ```
 
-### Passo 2: Criar e Ativar o Ambiente Virtual
+### Step 2: Create and Activate the Virtual Environment
 
 ```bash
 python -m venv venv
 source venv/bin/activate
 ```
-### Passo 3: Instalar as Dependências
+### Step 3: Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Verifique se as dependências são compatíveis com seu ambiente local, caso contrário adapte o que for necessário.
+Ensure that the dependencies are compatible with your local environment, otherwise adapt as necessary.
 
-### Passo 4: Configurar o Banco de Dados
+### Step 4: Configure the Database
 
-Edite o arquivo settings.py para configurar seu banco de dados, se necessário. O projeto está configurado para usar o SQLite por padrão como já vem no Django.
+Edit the settings.py file to configure your database if necessary. The project is configured to use SQLite by default as provided by Django.
 
 ### Passo 5: Executar Migrações
 
@@ -54,31 +54,31 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
-### Passo 6: Inicialização e Testes
+### Step 5: Run Migrations
 
-Certifique-se de que o Redis esteja em execução na porta 6379:
+Ensure that Redis is running on port 6379:
 ```bash
 redis-server
 ```
 
-Em uma nova aba, execute o Servidor de Desenvolvimento:
+In a new tab, run the Development Server:
 ```bash
 python manage.py runserver
 ```
 
-Em uma nova aba, inicie o worker do Celery:
+In a new tab, start the Celery worker:
 ```bash
 celery -A events_manager worker --loglevel=info
 ```
 
-Em uma nova aba, execute os testes para certificar-se que está tudo bem instalado e inicializado:
+In a new tab, run the tests to ensure everything is installed and initialized correctly:
 ```bash
 pytest
 ```
 
-## Usando a API
+## Using the API
 
-##### POST /api/users/ - Para iniciar, primeiramente é necessário criar um usuário:
+##### POST /api/users/ - To start, first create a user:
 ``` bash
 curl -X 'POST' \
   'http://localhost:8000/api/users/' \
@@ -93,7 +93,7 @@ curl -X 'POST' \
   "image_url": "https://avatars.githubusercontent.com/u/89175768?v=4"
 }'
 ```
-Exemplo de output esperado:
+Expected output example:
 ``` bash
 {
   "id": 3,
@@ -105,17 +105,16 @@ Exemplo de output esperado:
   "token": "<seu_token_aqui>"
 }
 ```
-O token gerado será utilizado no cabeçalho para autorização dos requests nos demais endpoints.
+The generated token will be used in the header for authorization of requests in the other endpoints.
 
-## Documentação dos Endpoints
+## API Documentation
 
 ### Swagger
-A documentação interativa da API pode ser acessada através do Swagger na seguinte URL: http://localhost:8000/api/schema/swagger-ui/
+The interactive API documentation can be accessed via Swagger at the following URL: http://localhost:8000/api/schema/swagger-ui/
 
+### Available Endpoints
 
-### Endpoints Disponíveis
-
-A API fornece os seguintes endpoints:
+The API provides the following endpoints:
 
 #### Eventos: 
 
