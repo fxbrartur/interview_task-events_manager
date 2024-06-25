@@ -47,14 +47,14 @@ Ensure that the dependencies are compatible with your local environment, otherwi
 
 Edit the settings.py file to configure your database if necessary. The project is configured to use SQLite by default as provided by Django.
 
-### Passo 5: Executar Migrações
+### Step 5: Run Migrations
 
 ```bash
 python manage.py makemigrations
 python manage.py migrate
 ```
 
-### Step 5: Run Migrations
+### Step 6: Initialization and Testing
 
 Ensure that Redis is running on port 6379:
 ```bash
@@ -119,9 +119,9 @@ The API provides the following endpoints:
 #### Eventos: 
 
 <details>
-  <summary>GET /api/events/ - Lista todos os eventos disponíveis</summary>
+  <summary>GET /api/events/ - List all available events</summary>
 
-Request de exemplo:
+Example request:
 ``` bash
 curl -X 'GET' \
   'http://localhost:8000/api/events/' \
@@ -129,7 +129,7 @@ curl -X 'GET' \
   -H 'Authorization: Token <seu_token_aqui>'
 ```
 
-Exemplo de output esperado:
+Expected output example:
 
 ``` bash
 [
@@ -158,9 +158,9 @@ Exemplo de output esperado:
 </details>
 
 <details>
-  <summary>POST /api/events/ - Cria um novo evento</summary>
+  <summary>POST /api/events/ - Create a new event</summary>
 
-Request de exemplo:
+Example request:
 ``` bash
 curl -X 'POST' \
   'http://localhost:8000/api/events/' \
@@ -176,7 +176,7 @@ curl -X 'POST' \
 }'
 ```
 
-Exemplo de output esperado:
+Expected output example:
 
 ``` bash
 {
@@ -194,7 +194,7 @@ Exemplo de output esperado:
 </details>
 
 <details>
-  <summary>GET /api/events/{id}/ - Trazer informações de um evento específico</summary>
+  <summary>GET /api/events/{id}/ - Retrieve information about a specific event</summary>
 
 ``` bash
 curl -X 'GET' \
@@ -202,7 +202,7 @@ curl -X 'GET' \
   -H 'accept: application/json' \
   -H 'Authorization: Token <seu_token_aqui>'
 ```
-Exemplo de output esperado:
+Expected output example:
 ``` bash
 {
   "id": 1,
@@ -218,7 +218,7 @@ Exemplo de output esperado:
 </details>
 
 <details>
-  <summary>PUT /api/events/{id}/ - Atualiza um evento específico</summary>
+  <summary>PUT /api/events/{id}/ - Update a specific event</summary>
 
 ```bash
 curl -X 'PUT' \
@@ -234,7 +234,7 @@ curl -X 'PUT' \
   "location": "local1"
 }'
 ```
-Exemplo de output esperado:
+Expected output example:
 ``` bash
 {
   "id": 2,
@@ -251,7 +251,7 @@ Exemplo de output esperado:
 </details>
 
 <details>
-  <summary>DELETE /api/events/{id}/ - Exclui um evento específico</summary>
+  <summary>>DELETE /api/events/{id}/ - Delete a specific event</summary>
 
 ```bash
 curl -X 'DELETE' \
@@ -259,7 +259,7 @@ curl -X 'DELETE' \
   -H 'accept: */*' \
   -H 'Authorization: Token <seu_token_aqui>' \
 ```
-Exemplo de output esperado:
+Expected output example:
 ``` bash
 status = 204 - No response body
 ```
@@ -267,7 +267,7 @@ status = 204 - No response body
 </details>
 
 <details>
-  <summary>GET /api/events/{id}/report/ - Gera relatório de um evento específico</summary>
+  <summary>GET /api/events/{id}/report/ - Generate a report for a specific event</summary>
 
 ```bash
 curl -X 'GET' \
@@ -275,7 +275,7 @@ curl -X 'GET' \
   -H 'accept: application/json' \
   -H 'Authorization: Token <seu_token_aqui>'
 ```
-Exemplo de output esperado:
+Expected output example:
 ``` bash
 {
   "event": "event1",
@@ -300,7 +300,7 @@ Exemplo de output esperado:
 </details>
 
 <details>
-  <summary>POST /api/events/{id}/subscribe/ - Permite a inscrição de usuários em eventos</summary>
+  <summary>POST /api/events/{id}/subscribe/ - Allow users to subscribe to events</summary>
 
 ```bash
 curl -X 'POST' \
@@ -309,7 +309,7 @@ curl -X 'POST' \
   -H 'Authorization: Token <seu_token_aqui>>' \
   -d ''
 ```
-Exemplo de output esperado:
+Expected output example:
 ``` bash
 {
   "status": "subscribed"
@@ -318,10 +318,10 @@ Exemplo de output esperado:
 
 </details>
 
-#### Usuários:
+#### Users:
 
 <details>
-  <summary>GET /api/users/ - Traz informações do usuário logado</summary>
+  <summary>GET /api/users/ - Retrieve information from the logged user.</summary>
 
 ```bash
 curl -X 'GET' \
@@ -329,7 +329,7 @@ curl -X 'GET' \
   -H 'accept: application/json' \
   -H 'Authorization: Token <seu_token_aqui>'
 ```
-Exemplo de output esperado:
+Expected output example:
 ``` bash
 [
   {
@@ -345,7 +345,7 @@ Exemplo de output esperado:
 ```
 </details>  
 <details>
-  <summary>POST /api/users/ - Cria um novo usuário</summary>
+  <summary>POST /api/users/ - Create a new user.</summary>
 
 ``` bash
 curl -X 'POST' \
@@ -361,7 +361,7 @@ curl -X 'POST' \
   "image_url": "https://avatars.githubusercontent.com/u/89175768?v=4"
 }'
 ```
-Exemplo de output esperado:
+Expected output example:
 ``` bash
 {
   "id": 3,
@@ -373,12 +373,12 @@ Exemplo de output esperado:
   "token": "<seu_token_aqui>"
 }
 ```
-O token gerado será utilizado no cabeçalho para autorização dos requests nos demais endpoints.
+The generated token will be used in the header for authorization of requests in the other endpoints.
 </details>  
 
 <details>
-  <summary>GET /api/users/{id}/ - Traz informações dum usuário específico</summary>
-Endpoint administrativo, para um superadmin gerenciar os usuários da ferramenta no futuro:
+  <summary>GET /api/users/{id}/ - Retrieve information about a specific event</summary>
+Administrative endpoint, for a superadmin to manage the software's users in a near future:
 
 ```bash
 curl -X 'GET' \
@@ -386,7 +386,7 @@ curl -X 'GET' \
   -H 'accept: application/json' \
   -H 'Authorization: Token <seu_token_aqui>'
 ```
-Exemplo de output esperado:
+Expected output example:
 
 ```bash
 {
@@ -403,7 +403,7 @@ Exemplo de output esperado:
 </details>  
 
 <details>
-  <summary>PUT /api/users/{id}/ - Atualiza um usuário específico</summary>
+  <summary>PUT /api/users/{id}/ - Update a specific event</summary>
 
 ```bash
 curl -X 'PUT' \
@@ -419,7 +419,7 @@ curl -X 'PUT' \
   "password": "string"
 }'
 ```
-Exemplo de output esperado:
+Expected output example:
 
 ```bash
 {
@@ -436,7 +436,7 @@ Exemplo de output esperado:
 </details>  
 
 <details>
-  <summary>DELETE /api/users/{id}/ - Exclui um usuário específico</summary>
+  <summary>DELETE /api/users/{id}/ - Delete a specific event</summary>
 
 ```bash
 curl -X 'DELETE' \
@@ -444,21 +444,21 @@ curl -X 'DELETE' \
   -H 'accept: */*' \
   -H 'Authorization: Token <seu_token_aqui>' \
 ```
-Exemplo de output esperado:
+Expected output example:
 ```bash
 status = 204 - No response body
 ```
 
 </details>  
 
-## Observações
+## Notes
 
-- Os microsserviços, implementei tudo que julguei que seria mais pesado na vida real, e também o que não precisava dar retorno imediato. Foram: Geração de Relatórios de Eventos, Confirmação de Inscrição em Evento, e Notificação de Atualização de Eventos. As notificações e confirmações estão sendo representadas por prints no log do worker do Celery, claro que num cenário real trocaríamos isso para um SMTP (ou outra coisa), até deixei pré-configurado no settings.py já.
-
-<br>
-
-- Trazendo apenas exemplos de output de sucesso para que a documentação não fique muito grande, mas sim, implementei algumas situações de ERROR HANDLING.
+- For microservices, I implemented everything that I considered to be heavier in real life and also what did not need immediate response. Those are: Event Reports Generation, Event Subscription Confirmation, and Event Update Notifications. Notifications and confirmations are represented by prints in the Celery worker log, but in a real scenario, we would switch this to an SMTP (or something else), which I have already pre-configured in settings.py.
 
 <br>
 
-- Com tempo, faria uma configuração de permissões para usuários, onde traria um comportamento mais realístico, do tipo, cada usuário tem propriedade no evento que criou, onde só ele pode editar e apagar o seu próprio evento, ou quando apagado e/ou editado por outro gerasse um pedido de aprovação.
+- Providing only examples of successful output so that the documentation does not become too large, but yes, I have implemented some ERROR HANDLING situations.
+
+<br>
+
+- With more time, I would configure user permissions, where I would bring a more realistic behavior, such as each user owning the event they created, where only they can edit and delete their own event, or when deleted and/or edited by another it would generate an approval request.
