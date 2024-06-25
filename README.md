@@ -196,12 +196,14 @@ Expected output example:
 <details>
   <summary>GET /api/events/{id}/ - Retrieve information about a specific event</summary>
 
+Example request:
 ``` bash
 curl -X 'GET' \
   'http://localhost:8000/api/events/1/' \
   -H 'accept: application/json' \
   -H 'Authorization: Token <seu_token_aqui>'
 ```
+
 Expected output example:
 ``` bash
 {
@@ -220,6 +222,7 @@ Expected output example:
 <details>
   <summary>PUT /api/events/{id}/ - Update a specific event</summary>
 
+Example request:
 ```bash
 curl -X 'PUT' \
   'http://localhost:8000/api/events/2/' \
@@ -234,6 +237,7 @@ curl -X 'PUT' \
   "location": "local1"
 }'
 ```
+
 Expected output example:
 ``` bash
 {
@@ -253,12 +257,14 @@ Expected output example:
 <details>
   <summary>>DELETE /api/events/{id}/ - Delete a specific event</summary>
 
+Example request:
 ```bash
 curl -X 'DELETE' \
   'http://localhost:8000/api/events/3/' \
   -H 'accept: */*' \
   -H 'Authorization: Token <seu_token_aqui>' \
 ```
+
 Expected output example:
 ``` bash
 status = 204 - No response body
@@ -269,6 +275,7 @@ status = 204 - No response body
 <details>
   <summary>GET /api/events/{id}/report/ - Generate a report for a specific event</summary>
 
+Example request:
 ```bash
 curl -X 'GET' \
   'http://localhost:8000/api/events/4/report/' \
@@ -302,6 +309,7 @@ Expected output example:
 <details>
   <summary>POST /api/events/{id}/subscribe/ - Allow users to subscribe to events</summary>
 
+Example request:
 ```bash
 curl -X 'POST' \
   'http://localhost:8000/api/events/2/subscribe/' \
@@ -309,6 +317,7 @@ curl -X 'POST' \
   -H 'Authorization: Token <seu_token_aqui>>' \
   -d ''
 ```
+
 Expected output example:
 ``` bash
 {
@@ -323,12 +332,14 @@ Expected output example:
 <details>
   <summary>GET /api/users/ - Retrieve information from the logged user.</summary>
 
+Example request:
 ```bash
 curl -X 'GET' \
   'http://localhost:8000/api/users/' \
   -H 'accept: application/json' \
   -H 'Authorization: Token <seu_token_aqui>'
 ```
+
 Expected output example:
 ``` bash
 [
@@ -347,6 +358,7 @@ Expected output example:
 <details>
   <summary>POST /api/users/ - Create a new user.</summary>
 
+Example request:
 ``` bash
 curl -X 'POST' \
   'http://localhost:8000/api/users/' \
@@ -361,6 +373,7 @@ curl -X 'POST' \
   "image_url": "https://avatars.githubusercontent.com/u/89175768?v=4"
 }'
 ```
+
 Expected output example:
 ``` bash
 {
@@ -380,12 +393,14 @@ The generated token will be used in the header for authorization of requests in 
   <summary>GET /api/users/{id}/ - Retrieve information about a specific event</summary>
 Administrative endpoint, for a superadmin to manage the software's users in a near future:
 
+Example request:
 ```bash
 curl -X 'GET' \
   'http://localhost:8000/api/users/3/' \
   -H 'accept: application/json' \
   -H 'Authorization: Token <seu_token_aqui>'
 ```
+
 Expected output example:
 
 ```bash
@@ -405,6 +420,7 @@ Expected output example:
 <details>
   <summary>PUT /api/users/{id}/ - Update a specific event</summary>
 
+Example request:
 ```bash
 curl -X 'PUT' \
   'http://localhost:8000/api/users/3/' \
@@ -419,6 +435,7 @@ curl -X 'PUT' \
   "password": "string"
 }'
 ```
+
 Expected output example:
 
 ```bash
@@ -438,12 +455,14 @@ Expected output example:
 <details>
   <summary>DELETE /api/users/{id}/ - Delete a specific event</summary>
 
+Example request:
 ```bash
 curl -X 'DELETE' \
   'http://localhost:8000/api/users/3/' \
   -H 'accept: */*' \
   -H 'Authorization: Token <seu_token_aqui>' \
 ```
+
 Expected output example:
 ```bash
 status = 204 - No response body
