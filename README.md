@@ -330,7 +330,7 @@ Expected output example:
 #### Users:
 
 <details>
-  <summary>GET /api/users/ - Retrieve information from the logged user.</summary>
+  <summary>GET /api/users/ - Retrieve information from the logged user</summary>
 
 Example request:
 ```bash
@@ -356,7 +356,7 @@ Expected output example:
 ```
 </details>  
 <details>
-  <summary>POST /api/users/ - Create a new user.</summary>
+  <summary>POST /api/users/ - Create a new user</summary>
 
 Example request:
 ``` bash
