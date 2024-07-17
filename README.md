@@ -1,6 +1,6 @@
-# Event Management System
+# Events Management System
 
-This project is an event management system developed with Django Rest Framework (DRF). It allows the creation, update, deletion, and listing of event information, as well as the creation, update, and removal of users for event participation and notifications about event updates.
+This project is an events management system developed with Django Rest Framework (DRF). It allows the creation, update, deletion, and listing of event information, as well as the creation, update, and removal of users for event participation and notifications about event updates.
 
 ## Features
 
