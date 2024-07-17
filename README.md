@@ -116,7 +116,7 @@ The interactive API documentation can be accessed via Swagger at the following U
 
 The API provides the following endpoints:
 
-#### Evento: 
+#### Events: 
 
 <details>
   <summary>GET /api/events/ - List all available events</summary>
